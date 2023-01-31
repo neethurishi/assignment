@@ -1,0 +1,12 @@
+version: "3"
+services:
+  web:
+    image: my-app-image
+    ports:
+      - "4200:4200"
+  nginx:
+    image: nginx:1.19
+    ports:
+      - "80:80"
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf:ro
